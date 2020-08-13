@@ -1,0 +1,10 @@
+# .libPaths()
+# .libPaths('/home/brandon/Library/R/3.6/library')
+
+library(shiny)
+library(XML)
+library(xml2)
+library(shinysky)
+library(shinythemes)
+library(magrittr)
+options(shiny.maxRequestSize=100*1024^2)
