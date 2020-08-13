@@ -1,2 +1,2 @@
 # SILAC_mixing_check
-SILAC mixing check Shiny App
+SHiny app for confirmation and correction of H/L samples
