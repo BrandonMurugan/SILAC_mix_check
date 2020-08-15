@@ -54,6 +54,7 @@ shinyServer(function(input, output,session) {
     
     # Upload peptides.txt ---------------------------------------------------------
     
+
     output$pepfile <- renderDataTable({
         req(input$peptides_file)
         
@@ -82,6 +83,10 @@ shinyServer(function(input, output,session) {
             InitialMix$Corrected_volume_L <- ""
             InitialMix$Volume_H <- as.numeric(InitialMix$Volume_H)
             InitialMix$Volume_L <- as.numeric(InitialMix$Volume_L)
+            peptidesTable <- read.delim(file = input$peptides_file$datapath,
+                                        header = T,
+                                        sep = "\t",
+                                        stringsAsFactors = F)
             peptidesTable_intensities <- peptidesTable[,c(grep("Intensity.H.",colnames(peptidesTable)), 
                                                           grep("Intensity.L.",colnames(peptidesTable)))]
             peptidesTable_intensities_sums <- data.frame(t(colSums(peptidesTable_intensities)))
